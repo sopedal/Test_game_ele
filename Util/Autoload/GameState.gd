@@ -976,11 +976,12 @@ func advance_day():
 	# Update daily systems
 	_update_weather()
 	_regenerate_energy()
-	_reset_daily_dialogue_stats()
-	_reset_daily_test_limits()
-	_process_daily_job()
-	_decay_unused_skills()
-	_check_scheduled_tests()
+        _reset_daily_dialogue_stats()
+        _reset_daily_test_limits()
+        _process_daily_job()
+        _decay_unused_skills()
+        _process_daily_quests()
+        _check_scheduled_tests()
 	
 	emit_signal("day_changed", current_time.day, current_time.season, current_time.year)
 
@@ -2311,15 +2312,99 @@ func _reset_daily_test_limits():
 	test_system.tests_taken_today = 0
 
 func _check_scheduled_tests():
-	# Check if any tests should be automatically scheduled
-	if player_stats.overall_level in test_schedule.level_milestones:
-		if test_system.next_scheduled_test == null:
-			test_system.next_scheduled_test = {
-				"type": "comprehensive_exam",
-				"reason": "Level milestone reached",
-				"available_until": _add_days_to_date(current_time, 3)
-			}
-			print("Comprehensive exam available! Complete within 3 days.")
+        # Check if any tests should be automatically scheduled
+        if player_stats.overall_level in test_schedule.level_milestones:
+                if test_system.next_scheduled_test == null:
+                        test_system.next_scheduled_test = {
+                                "type": "comprehensive_exam",
+                                "reason": "Level milestone reached",
+                                "available_until": _add_days_to_date(current_time, 3)
+                        }
+                        print("Comprehensive exam available! Complete within 3 days.")
+
+# ===========================================================================
+# MENTOR QUEST FUNCTIONS
+# ===========================================================================
+
+func start_mentor_quest(quest_id: String) -> bool:
+        if not mentor_quests.has(quest_id):
+                return false
+
+        var quest = mentor_quests[quest_id]
+        if not quest.available:
+                return false
+
+        var active = {
+                "id": quest_id,
+                "grade": quest.current_grade,
+                "progress": {},
+                "days_remaining": quest.timeframe_days
+        }
+        active_quests.append(active)
+        quest.available = false
+
+        if not quest.has("cooldown_remaining"):
+                quest.cooldown_remaining = 0
+
+        EventBus.safe_emit("mentor_quest_started", [quest_id, quest.name, quest.timeframe_days])
+        return true
+
+func update_mentor_quest_progress(quest_id: String, progress: Dictionary):
+        for quest in active_quests:
+                if quest.id == quest_id:
+                        quest.progress.merge(progress, true)
+                        EventBus.safe_emit("mentor_quest_progress_updated", [quest_id, quest.progress])
+                        break
+
+func complete_mentor_quest(quest_id: String) -> bool:
+        for quest in active_quests:
+                if quest.id == quest_id:
+                        active_quests.erase(quest)
+                        completed_quests.append({"id": quest_id, "grade": quest.grade, "date": current_time.duplicate()})
+                        var data = mentor_quests[quest_id]
+                        data.completed_grades.append(quest.grade)
+                        data.last_completed = current_time.duplicate()
+                        data.cooldown_remaining = data.cooldown_days
+
+                        var next_grade = _get_next_quest_grade(quest.grade)
+                        if next_grade != null:
+                                data.current_grade = next_grade
+                        EventBus.safe_emit("mentor_quest_completed", [quest_id, quest_grade_names[quest.grade], {}])
+                        return true
+        return false
+
+func fail_mentor_quest(quest_id: String, reason: String = ""):
+        for quest in active_quests:
+                if quest.id == quest_id:
+                        active_quests.erase(quest)
+                        var data = mentor_quests[quest_id]
+                        data.cooldown_remaining = data.cooldown_days
+                        EventBus.safe_emit("mentor_quest_failed", [quest_id, reason])
+                        return
+
+func _process_daily_quests():
+        for quest in active_quests.duplicate():
+                quest.days_remaining -= 1
+                if quest.days_remaining <= 0:
+                        fail_mentor_quest(quest.id, "time_up")
+                else:
+                        if quest.days_remaining == 1:
+                                EventBus.safe_emit("quest_deadline_approaching", [quest.id, quest.days_remaining])
+                        EventBus.safe_emit("mentor_quest_progress_updated", [quest.id, {"days_remaining": quest.days_remaining}])
+
+        for qid in mentor_quests.keys():
+                var q = mentor_quests[qid]
+                if q.has("cooldown_remaining") and q.cooldown_remaining > 0:
+                        q.cooldown_remaining -= 1
+                        if q.cooldown_remaining <= 0:
+                                q.available = true
+
+func _get_next_quest_grade(current_grade: int):
+        var order = [QuestGrade.EASY, QuestGrade.NORMAL, QuestGrade.HARD, QuestGrade.MASTER]
+        var idx = order.find(current_grade)
+        if idx >= 0 and idx < order.size() - 1:
+                return order[idx + 1]
+        return null
 
 func _get_context_name(context: int) -> String:
 	match context:
