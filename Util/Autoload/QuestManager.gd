@@ -127,14 +127,29 @@ func start_test_quest():
 # === DEBUG METHODS ===
 
 func print_quest_status():
-	"""Debug method to print all quest info"""
-	print("\n=== QUEST STATUS ===")
-	print("Total quests: %d" % quests.size())
-	print("Active quests: %d" % get_active_quests().size())
+        """Debug method to print all quest info"""
+        print("\n=== QUEST STATUS ===")
+        print("Total quests: %d" % quests.size())
+        print("Active quests: %d" % get_active_quests().size())
 	
-	for quest in get_active_quests():
-		print("📜 %s (%s)" % [quest.quest_name, quest.state])
-		for objective in quest.objectives:
-			var status = "✅" if objective.is_completed else "❌"
-			print("  %s %s" % [status, objective.description])
-	print("==================\n")
+        for quest in get_active_quests():
+                print("📜 %s (%s)" % [quest.quest_name, quest.state])
+                for objective in quest.objectives:
+                        var status = "✅" if objective.is_completed else "❌"
+                        print("  %s %s" % [status, objective.description])
+        print("==================\n")
+
+# === MENTOR QUEST INTEGRATION ===
+
+func start_mentor_quest(quest_id: String) -> bool:
+        var success = GameState.start_mentor_quest(quest_id)
+        if success:
+                var data = GameState.mentor_quests[quest_id]
+                var quest = Quest.new()
+                quest.quest_id = quest_id
+                quest.quest_name = data.name
+                quest.quest_description = data.description
+                quest.state = "in_progress"
+                quests[quest_id] = quest
+                quest_list_updated.emit()
+        return success
