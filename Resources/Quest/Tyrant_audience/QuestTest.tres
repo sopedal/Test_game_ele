@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=6 format=3 uid="uid://jufh3wxtj4om"]
+
+[ext_resource type="Script" uid="uid://djhll2d288ts" path="res://Util/Quest/Objectives.gd" id="1_d8jiw"]
+[ext_resource type="Resource" uid="uid://50bwi1tn70aa" path="res://Resources/Quest/Tyrant_audience/Tyrant_objective.tres" id="2_6hkew"]
+[ext_resource type="Script" uid="uid://bkc614qnehdcr" path="res://Util/Quest/Rewards.gd" id="3_njw4x"]
+[ext_resource type="Resource" uid="uid://cd3585o1qb5qk" path="res://Resources/Quest/Tyrant_audience/reward_tyrant.tres" id="4_bprys"]
+[ext_resource type="Script" uid="uid://4h1ger53n8no" path="res://Util/Quest/Quest.gd" id="5_hr65r"]
+
+[resource]
+script = ExtResource("5_hr65r")
+quest_id = "tyrant_audience_001"
+quest_name = "Audience with the Tyrant"
+quest_description = "The iron-fisted ruler demands to see you. Gather the required tribute and speak with the palace guards to arrange a meeting"
+state = "in_progress"
+unlock_id = ""
+objectives = Array[ExtResource("1_d8jiw")]([ExtResource("2_6hkew")])
+rewards = Array[ExtResource("3_njw4x")]([ExtResource("4_bprys")])
+metadata/_custom_type_script = "uid://4h1ger53n8no"

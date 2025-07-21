@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCStats" load_steps=3 format=3 uid="uid://cas01gf35c6"]
+
+[ext_resource type="Script" uid="uid://c3wvi1easgt5w" path="res://Util/NPC/NPCStats.gd" id="1_6lla8"]
+[ext_resource type="Texture2D" uid="uid://btmfrf5ht727m" path="res://Assets/Modern_Exteriors_Characters_Postman_48x48_1.png" id="2_5smm0"]
+
+[resource]
+script = ExtResource("1_6lla8")
+texture = ExtResource("2_5smm0")
+npc_name = "Juan"
+met = false
+metadata/_custom_type_script = "uid://c3wvi1easgt5w"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AnimalStats" load_steps=3 format=3 uid="uid://cb0ul8smuin8h"]
+
+[ext_resource type="Script" uid="uid://urhn7vvy5igr" path="res://Util/Animals/AnimalStats.gd" id="1_vwtd1"]
+[ext_resource type="Texture2D" uid="uid://7tobiwa03v2l" path="res://Assets/Animals/Duck_Brown_32x32.png" id="2_5oiqy"]
+
+[resource]
+script = ExtResource("1_vwtd1")
+texture = ExtResource("2_5oiqy")
+animal_name = "Duck"
+metadata/_custom_type_script = "uid://urhn7vvy5igr"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCStats" load_steps=3 format=3 uid="uid://coy446sup2bt2"]
+
+[ext_resource type="Script" uid="uid://c3wvi1easgt5w" path="res://Util/NPC/NPCStats.gd" id="1_ak7ke"]
+[ext_resource type="Texture2D" uid="uid://bsply6gxebhmr" path="res://Assets/character/Premade_Character_32x32_09.png" id="2_b7tvg"]
+
+[resource]
+script = ExtResource("1_ak7ke")
+texture = ExtResource("2_b7tvg")
+npc_name = "Clara"
+met = false
+metadata/_custom_type_script = "uid://c3wvi1easgt5w"

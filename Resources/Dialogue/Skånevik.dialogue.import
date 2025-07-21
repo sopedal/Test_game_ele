@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cjenpso2w57xa"
+path="res://.godot/imported/Skånevik.dialogue-46bc41bfa627a61633998e9aa27cf0a9.tres"
+
+[deps]
+
+source_file="res://Resources/Dialogue/Skånevik.dialogue"
+dest_files=["res://.godot/imported/Skånevik.dialogue-46bc41bfa627a61633998e9aa27cf0a9.tres"]
+
+[params]
+
+defaults=true

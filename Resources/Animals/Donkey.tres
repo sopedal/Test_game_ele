@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AnimalStats" load_steps=2 format=3 uid="uid://kuqpqqif4fux"]
+
+[ext_resource type="Script" uid="uid://urhn7vvy5igr" path="res://Util/Animals/AnimalStats.gd" id="1_pmnr4"]
+
+[resource]
+script = ExtResource("1_pmnr4")
+animal_name = "Donkey"
+metadata/_custom_type_script = "uid://urhn7vvy5igr"

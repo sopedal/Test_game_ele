@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AnimalStats" load_steps=3 format=3 uid="uid://bdgtn18tu3elp"]
+
+[ext_resource type="Script" uid="uid://urhn7vvy5igr" path="res://Util/Animals/AnimalStats.gd" id="1_okh83"]
+[ext_resource type="Texture2D" uid="uid://dbd3a85gx8rl7" path="res://Assets/Animals/Pig_Pink_32x32.png" id="2_odk1a"]
+
+[resource]
+script = ExtResource("1_okh83")
+texture = ExtResource("2_odk1a")
+animal_name = "Pig"
+metadata/_custom_type_script = "uid://urhn7vvy5igr"

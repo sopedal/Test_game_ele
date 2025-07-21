@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Objectives" load_steps=2 format=3 uid="uid://50bwi1tn70aa"]
+
+[ext_resource type="Script" uid="uid://djhll2d288ts" path="res://Util/Quest/Objectives.gd" id="1_xeq22"]
+
+[resource]
+script = ExtResource("1_xeq22")
+id = "collect_tribute_gold"
+description = "Collect gold for tribute"
+is_completed = false
+target_id = "gold_coin"
+target_type = "collection"
+required_quantity = 100
+collected_quantity = 25
+objective_dialog = ""
+metadata/_custom_type_script = "uid://djhll2d288ts"

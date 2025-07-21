@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AnimalStats" load_steps=3 format=3 uid="uid://d2vacs40molf6"]
+
+[ext_resource type="Script" uid="uid://urhn7vvy5igr" path="res://Util/Animals/AnimalStats.gd" id="1_se0p0"]
+[ext_resource type="Texture2D" uid="uid://bt612sxtxecvn" path="res://Assets/Animals/Goat_Black_Head_32x32.png" id="2_nvfil"]
+
+[resource]
+script = ExtResource("1_se0p0")
+texture = ExtResource("2_nvfil")
+animal_name = "Goat"
+metadata/_custom_type_script = "uid://urhn7vvy5igr"

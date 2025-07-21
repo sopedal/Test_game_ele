@@ -1,0 +1,13 @@
+~ start
+Jake: [[Hey|Oi|Yo]], what are you lookin' at?
+Jake: You think you're better than me, huh? Say it!
+- Calm him down
+	Jake: [[Pfft|Tch|Hah]], you think you can calm me down? I'm just gettin' started!
+- Walk away
+	Jake: [[Yeah, walk away!|Run off then!|Coward!]] That's what I thought.
+- Push him back
+	Jake: [[Oh, you wanna go?|That’s it!|You made a mistake now!]] Let's settle this outside!
+- Start again => start
+- End the conversation => END
+Jake: [[Come on then!|Hit me!|Show me what you got!]] I’m ready!
+=> END

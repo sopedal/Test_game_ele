@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AnimalStats" load_steps=3 format=3 uid="uid://7h5v503aape5"]
+
+[ext_resource type="Script" uid="uid://urhn7vvy5igr" path="res://Util/Animals/AnimalStats.gd" id="1_uwo47"]
+[ext_resource type="Texture2D" uid="uid://clga8tu5q1og4" path="res://Assets/Animals/Donkey_Caramel_32x32.png" id="2_f4mli"]
+
+[resource]
+script = ExtResource("1_uwo47")
+texture = ExtResource("2_f4mli")
+animal_name = "Horse"
+metadata/_custom_type_script = "uid://urhn7vvy5igr"

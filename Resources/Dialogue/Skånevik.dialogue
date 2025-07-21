@@ -1,0 +1,33 @@
+~ start
+Sven: [[Yo|Greetings, m'lady|Hrk...]], is this the bar or the fish market?
+Sven: I'm Sven. Finance man by day, lonely wanderer by night.
+Sven: I came to Skånevik for the Blues Festival... and now the beer is whispering blues lyrics at me.
+Sven: Every woman I talk to turns into a saxophone. Help?
+- Try to flirt
+	Sven: Excuse me miss, are you a... spreadsheet? Because I want to—uhh... wait, no. 
+	Sven: She just laughed and walked away. Or floated. It's hard to tell.
+- Go outside
+	Sven: The bar smells like regret and beard oil.
+	Sven: I'm gonna go outside and ask that tree why it's vibrating.
+	=> outside_scene
+- Sit in the corner and hum the blues
+	Sven: *hums awkwardly and spills half a cider on his shoes*
+	Sven: Everyone's staring at me. One guy just said "respect the groove" and vanished into fog.
+	=> END
+- End the conversation => END
+
+Sven: Just between us... I think the drummer is controlling my thoughts.
+Sven: And the harmonica player keeps calling me "Spreadsheet Man."
+=> END
+
+~ outside_scene
+Sven: The fjord is pulsing in time with the snare drum. That can't be normal, right?
+Sven: A woman with glowing eyes offered me a cigarette made of moss.
+Sven: Should I...
+- Accept the moss cigarette
+	Sven: I'm flying now. Not metaphorically. I'm hovering above the bar like a confused spreadsheet angel.
+- Ask for directions to reality
+	Sven: The bartender said I could find reality behind the third bass amp.
+	Sven: There was only a goat. I think it works for NAV.
+- Go back inside => start
+- Surrender to the music => END

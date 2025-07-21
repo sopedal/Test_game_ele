@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Rewards" load_steps=2 format=3 uid="uid://cd3585o1qb5qk"]
+
+[ext_resource type="Script" uid="uid://bkc614qnehdcr" path="res://Util/Quest/Rewards.gd" id="1_n2cuq"]
+
+[resource]
+script = ExtResource("1_n2cuq")
+reward_type = "experience"
+reward_amount = 300
+metadata/_custom_type_script = "uid://bkc614qnehdcr"

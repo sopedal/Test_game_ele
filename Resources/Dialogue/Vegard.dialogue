@@ -1,0 +1,21 @@
+~ start
+Ingrid: [[Hi|Hello|Greetings]], I have urgent news.
+Ingrid: Haugesund is changing rapidly.
+Ingrid: A dictator is slowly taking control of more areas across the city.
+Ingrid: The local council has been dissolved, and checkpoints have appeared overnight.
+
+Ingrid: Do you want to know more about what's happening?
+- Tell me which areas are affected
+	Ingrid: It started near the harbor. Now, Skåredalen and parts of sentrum are under military presence.
+	Ingrid: People are afraid to speak out. Surveillance is everywhere.
+- Who is this dictator?
+	Ingrid: His name is Arman Kell. No one voted for him, but he's gaining control through fear and silence.
+	Ingrid: He uses propaganda and unknown forces to tighten his grip.
+- What can we do?
+	Ingrid: Right now? Stay informed, stay careful, and speak only to those you trust.
+	Ingrid: Resistance may come—but not yet.  
+- Start again => start
+- End the conversation => END
+
+Ingrid: Be safe. These times are dangerous.
+=> END

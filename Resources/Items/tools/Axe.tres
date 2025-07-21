@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bq5gwta71q16h"]
+
+[ext_resource type="Script" uid="uid://ddo3oai1yuv47" path="res://Util/Items/Item.gd" id="1_u2rb5"]
+[ext_resource type="Texture2D" uid="uid://0pdcgljwwnjw" path="res://Assets/Items/icon105.png" id="2_2upr0"]
+
+[resource]
+script = ExtResource("1_u2rb5")
+item_name = "Axe"
+sprite = ExtResource("2_2upr0")
+healing_amount = 1
+damage = 1
+metadata/_custom_type_script = "uid://ddo3oai1yuv47"

@@ -1,0 +1,43 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://be42cg78640yh"]
+
+[ext_resource type="Texture2D" uid="uid://dx7prllpfu7on" path="res://Assets/tileset/Modern/ME_Theme_Sorter_48x48/23_MIlitary_Base_48x48.png" id="1_njqf2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75voo"]
+texture = ExtResource("1_njqf2")
+texture_region_size = Vector2i(48, 48)
+22:94/size_in_atlas = Vector2i(10, 12)
+22:94/0 = 0
+18:144/size_in_atlas = Vector2i(11, 23)
+18:144/0 = 0
+1:144/size_in_atlas = Vector2i(8, 22)
+1:144/0 = 0
+0:90/size_in_atlas = Vector2i(11, 9)
+0:90/0 = 0
+11:93/size_in_atlas = Vector2i(11, 12)
+11:93/0 = 0
+11:81/size_in_atlas = Vector2i(11, 12)
+11:81/0 = 0
+23:84/0 = 0
+23:85/0 = 0
+23:86/0 = 0
+23:87/0 = 0
+23:88/0 = 0
+23:89/0 = 0
+25:84/0 = 0
+25:85/0 = 0
+25:86/0 = 0
+25:87/0 = 0
+25:88/0 = 0
+25:89/0 = 0
+8:68/size_in_atlas = Vector2i(12, 7)
+8:68/0 = 0
+9:63/size_in_atlas = Vector2i(11, 4)
+9:63/0 = 0
+13:42/size_in_atlas = Vector2i(11, 13)
+13:42/0 = 0
+17:156/0 = 0
+
+[resource]
+tile_size = Vector2i(48, 48)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_75voo")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCStats" load_steps=3 format=3 uid="uid://dvn7bssds1r8s"]
+
+[ext_resource type="Script" uid="uid://c3wvi1easgt5w" path="res://Util/NPC/NPCStats.gd" id="1_eexm3"]
+[ext_resource type="Texture2D" uid="uid://dv3etwqmxaopi" path="res://Assets/character/Premade_Character_32x32_13.png" id="2_7tcsf"]
+
+[resource]
+script = ExtResource("1_eexm3")
+texture = ExtResource("2_7tcsf")
+npc_name = "Finn"
+met = false
+metadata/_custom_type_script = "uid://c3wvi1easgt5w"

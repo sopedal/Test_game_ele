@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=4 uid="uid://d0lqahd2ojsyd"]
+
+[ext_resource type="TileSet" uid="uid://dunxqeuiieyln" path="res://Resources/Slots/Sea_animation.tres" id="1_g266i"]
+[ext_resource type="Texture2D" uid="uid://cc20knu5u3op1" path="res://Assets/tileset/Modern/Sea_Water_Tileset_No_Sand_Basic_32x32.png" id="2_5tg8n"]
+[ext_resource type="Texture2D" uid="uid://clp8qykrce1bb" path="res://Assets/tileset/Modern/Beach_Floating_Rock_3_32x32.png" id="3_mla5m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mla5m"]
+texture = ExtResource("2_5tg8n")
+texture_region_size = Vector2i(32, 32)
+0:3/animation_separation = Vector2i(3, 0)
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
+0:3/animation_frame_3/duration = 1.0
+0:3/animation_frame_4/duration = 1.0
+0:3/animation_frame_5/duration = 1.0
+0:3/animation_frame_6/duration = 1.0
+0:3/animation_frame_7/duration = 1.0
+0:3/0 = 0
+0:2/animation_columns = 7
+0:2/animation_separation = Vector2i(3, 0)
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/0 = 0
+0:1/animation_columns = 8
+0:1/animation_separation = Vector2i(3, 0)
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s2tkk"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
+sources/1 = SubResource("TileSetAtlasSource_mla5m")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s2tkk"]
+texture = ExtResource("3_mla5m")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 8
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ul27c"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_s2tkk")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_g266i")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAA5AAoAAQAAAAIAAAA5AAkAAQAAAAIAAAA5AAgAAQAAAAIAAAA5AAcAAQAAAAIAAAA5AAsAAQAAAAIAAAA5AAwAAQAAAAIAAAA5AAYAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_s2tkk")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAA7AAkAAQAAAAAAAAA9AAkAAQAAAAAAAAA5AAgAAQAAAAAAAAA+AAgAAQAAAAAAAAA/AAkAAQAAAAAAAAA9AAYAAQAAAAAAAAA7AAgAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ul27c")

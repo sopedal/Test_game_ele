@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dd5b42muqbp5c"
+path="res://.godot/imported/Vegard.dialogue-aec4409a2dcad3893374500311782500.tres"
+
+[deps]
+
+source_file="res://Resources/Dialogue/Vegard.dialogue"
+dest_files=["res://.godot/imported/Vegard.dialogue-aec4409a2dcad3893374500311782500.tres"]
+
+[params]
+
+defaults=true

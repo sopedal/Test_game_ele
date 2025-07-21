@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AnimalStats" load_steps=3 format=3 uid="uid://b54l14vg7vdww"]
+
+[ext_resource type="Script" uid="uid://urhn7vvy5igr" path="res://Util/Animals/AnimalStats.gd" id="1_licwr"]
+[ext_resource type="Texture2D" uid="uid://cjvkbdhphwbaw" path="res://Assets/Animals/Goat_White_32x32.png" id="2_ar4i3"]
+
+[resource]
+script = ExtResource("1_licwr")
+texture = ExtResource("2_ar4i3")
+animal_name = "White Goat"
+metadata/_custom_type_script = "uid://urhn7vvy5igr"
